@@ -1,2 +1,21 @@
-# Email_Classifier
- This code automatically classifies emails into Korean categories.
+# Email Classifier (Chrome Extension)
+이 프로젝트는 Gmail 웹페이지에 표시되는 이메일들을 카테고리별로 자동 분류해, 이메일 목록 옆에 라벨을 추가로 표시해주는 크롬 확장 프로그램입니다. 비즈니스, 학교, 광고, 개인, 기타 등의 카테고리를 스크립트가 분석하여 Gmail UI 상에서 색상 태그로 보여줍니다.
+
+### 기능 소개
+자동 분류: 미리 정의된 카테고리(비즈니스, 학교, 개인, 광고, 기타)별 키워드 리스트를 기반으로, 이메일 제목(Subject)에 포함된 단어를 분석해 가장 적합한 카테고리를 결정합니다.
+라벨 표시: 분류된 카테고리는 각각 다른 색상의 라벨로 이메일 목록에 표시됩니다.
+실시간 관찰(MutationObserver): 새로운 이메일이 도착하거나, 페이지 이동 시 자동으로 분류를 다시 실행합니다.
+확장성: categoryKeywords 객체에 키워드를 추가하거나 수정하여 분류 로직을 쉽게 고도화할 수 있습니다.
+
+
+### 폴더 구조
+Email_Classifier/
+├── background.js       # 백그라운드 스크립트 (필요 시 확장 가능)
+├── content.js          # 메인 로직(이메일 분류 코드)
+├── manifest.json       # Chrome 확장 프로그램 설정 파일 (매니페스트)
+├── popup.html          # (선택) 팝업 페이지
+├── icon.png            # 확장 프로그램 아이콘
+├── token.json          # (사용 시) OAuth 토큰 파일 등 (주의: 민감정보 관리)
+├── .gitignore          # Git 무시 리스트
+├── README.md           # 프로젝트 설명 (본 파일)
+└── ...                # 그 외 추가 리소스
